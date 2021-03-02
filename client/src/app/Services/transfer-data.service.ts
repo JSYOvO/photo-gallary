@@ -19,6 +19,22 @@ export class TransferDataService {
     this.LoadImagesWithSubscription();
   }
 
+  private SubscribeToAddImageContextChanges() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    this.addImage.context.subscribe((message) => {
+      if (message === null) {
+        return;
+      }
+      this.client
+        .post<IPictureModel>('http://localhost:3000/add/', message, httpOptions)
+        .subscribe((callback) => {});
+    });
+  }
+
   private LoadImagesWithSubscription() {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -38,21 +54,5 @@ export class TransferDataService {
             });
         });
       });
-  }
-
-  private SubscribeToAddImageContextChanges() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-    this.addImage.context.subscribe((message) => {
-      if (message === null) {
-        return;
-      }
-      this.client
-        .post<IPictureModel>('http://localhost:3000/add/', message, httpOptions)
-        .subscribe((callback) => {});
-    });
   }
 }
