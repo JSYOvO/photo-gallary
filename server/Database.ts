@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import { DB_URL } from "./DatabaseConfig";
 
 export const PictureSchema = new Schema({
     Image: String,
@@ -8,9 +9,7 @@ export const PictureSchema = new Schema({
 });
 
 export class Mongo {
-    constructor(
-        private url: string = "mongodb+srv://jsyovo:jsyovo@cluster0.e4rch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    ) {}
+    constructor(private url: string = DB_URL) {}
 
     public Connect(): void {
         mongoose.connect(this.url, (e) => {
