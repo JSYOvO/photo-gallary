@@ -1,0 +1,1 @@
+{"version":3,"file":"DeletePictureRouter.js","sourceRoot":"","sources":["../../Routing/DeletePictureRouter.ts"],"names":[],"mappings":";;;AAIA,MAAa,mBAAmB;IACrB,QAAQ,CAAC,KAAU;QACtB,KAAK,CAAC,IAAI,CACN,UAAU,EACV,CAAC,OAAgB,EAAE,QAAkB,EAAE,EAAE;YACrC,OAAO,CAAC,GAAG,CAAC,OAAO,CAAC,IAAI,CAAC,CAAC;QAC9B,CAAC,CACJ,CAAC;IACN,CAAC;CACJ;AATD,kDASC"}
